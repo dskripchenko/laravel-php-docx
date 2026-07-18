@@ -1,0 +1,66 @@
+{
+    "name": "dskripchenko/laravel-php-docx",
+    "description": "Laravel bridge for dskripchenko/php-docx — Docx facade, Blade view to DOCX, config-driven page setup, response()->docx() macro, DOCX to HTML import and template-variable detection.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "docx",
+        "word",
+        "html-to-docx",
+        "docx-to-html",
+        "docx-generation",
+        "blade",
+        "mail-merge",
+        "template"
+    ],
+    "homepage": "https://github.com/dskripchenko/laravel-php-docx",
+    "authors": [
+        {
+            "name": "Denis Skripchenko",
+            "email": "denskrp90@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "dskripchenko/php-docx": "^1.2",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/view": "^11.0 || ^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "tijsverkoyen/css-to-inline-styles": "^2.2"
+    },
+    "suggest": {
+        "tijsverkoyen/css-to-inline-styles": "Lets Docx::fromHtmlWithStyles() and view(..., inlineStyles: true) resolve <style> blocks and CSS classes"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dskripchenko\\LaravelPhpDocx\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dskripchenko\\LaravelPhpDocx\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dskripchenko\\LaravelPhpDocx\\PhpDocxServiceProvider"
+            ],
+            "aliases": {
+                "Docx": "Dskripchenko\\LaravelPhpDocx\\Facades\\Docx"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
