@@ -8,6 +8,8 @@
 > and reader fidelity
 > [tracked on an external corpus](https://github.com/dskripchenko/php-docx/blob/main/docs/READER-FIDELITY.md).
 
+> 🌐 **English** · [Deutsch](docs/de/README.md) · [Русский](docs/ru/README.md) · [中文](docs/zh/README.md)
+
 [![Tests](https://img.shields.io/github/actions/workflow/status/dskripchenko/laravel-php-docx/tests.yml?branch=main&label=tests&logo=github)](https://github.com/dskripchenko/laravel-php-docx/actions/workflows/tests.yml)
 [![Latest Version](https://img.shields.io/packagist/v/dskripchenko/laravel-php-docx?logo=packagist&logoColor=white)](https://packagist.org/packages/dskripchenko/laravel-php-docx)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
