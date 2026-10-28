@@ -111,6 +111,12 @@ Die vollständige Builder-API — Tabellen, Listen, Bilder, Seiteneinrichtung,
 Wasserzeichen — ist in [php-docx](https://github.com/dskripchenko/php-docx)
 dokumentiert.
 
+Der Builder beginnt mit der Seite aus der [Konfiguration](#konfiguration).
+`newSection()` beginnt einen weiteren Abschnitt – etwa im Querformat oder
+mit eigenen Kopfzeilen – und behält diese Seite, sofern keine andere
+angegeben ist; Bilder lassen sich frei auf der Seite platzieren, hinter
+oder vor dem Text (php-docx 1.18+).
+
 ## Konfiguration
 
 `config/php-docx.php`:

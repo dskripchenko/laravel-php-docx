@@ -107,6 +107,8 @@ return Docx::render($document)->download('report.docx');
 完整的构建器 API（表格、列表、图片、页面设置、水印）见
 [php-docx](https://github.com/dskripchenko/php-docx)。
 
+构建器从[配置](#配置)中的页面开始。`newSection()` 开始新的一节（例如横向页面或使用独立的页眉页脚），未另行指定时沿用该页面；图片可以在页面上自由定位，置于文字下方或上方（php-docx 1.18+）。
+
 ## 配置
 
 `config/php-docx.php`：

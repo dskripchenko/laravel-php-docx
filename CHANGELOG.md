@@ -5,6 +5,18 @@ this file. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning
 follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-10-28
+
+### Changed
+- `Docx::builder()` starts on the page from the configuration (paper,
+  orientation, margins), as the configuration says of every document made
+  through the facade; it used php-docx's defaults. Sections started with
+  `newSection()` keep that page unless given their own.
+
+### Added
+- README (en/ru/de/zh): the builder's sections and floating pictures
+  (php-docx 1.18+).
+
 ## [1.0.0] — 2026-07-18
 
 Initial release.

@@ -76,6 +76,27 @@ final class DocxFactoryTest extends TestCase
     }
 
     #[Test]
+    public function builder_starts_on_the_page_from_the_config(): void
+    {
+        config()->set('php-docx', ['paper' => 'a5', 'orientation' => 'landscape', 'margins' => ['top' => 10]]);
+        $this->app->forgetInstance(\Dskripchenko\LaravelPhpDocx\DocxFactory::class);
+        Docx::clearResolvedInstances();
+
+        $document = Docx::builder()
+            ->paragraph('Config page')
+            ->newSection(start: \Dskripchenko\PhpDocx\Style\SectionStart::Continuous)
+            ->paragraph('Same page setup')
+            ->build();
+
+        foreach ($document->sections() as $section) {
+            self::assertSame(PaperSize::A5, $section->pageSetup->paperSize);
+            self::assertSame(Orientation::Landscape, $section->pageSetup->orientation);
+            self::assertSame((int) round(10 * 56.6929), $section->pageSetup->marginTopTwips);
+        }
+        self::assertCount(2, $document->sections());
+    }
+
+    #[Test]
     public function detect_variables_finds_placeholders(): void
     {
         $bytes = Docx::fromHtml('<p>Hello {{customer_name}}, total: ${total}</p>')->bytes();
