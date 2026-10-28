@@ -111,6 +111,11 @@ return Docx::render($document)->download('report.docx');
 The full builder API (tables, lists, images, page setup, watermarks) is
 documented in [php-docx](https://github.com/dskripchenko/php-docx).
 
+The builder starts on the page from the [configuration](#configuration).
+`newSection()` starts another section — on landscape pages, say, or with
+its own headers — and keeps that page unless given one; pictures can float
+on the page, behind or in front of the text (php-docx 1.18+).
+
 ## Configuration
 
 `config/php-docx.php`:

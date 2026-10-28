@@ -95,12 +95,14 @@ class DocxFactory
     }
 
     /**
-     * Fluent builder for programmatic documents. Wrap the result with
-     * {@see render()} to produce a response-ready DOCX.
+     * Fluent builder for programmatic documents, on the page from the
+     * config; sections started with `newSection()` keep it unless given
+     * their own. Wrap the result with {@see render()} to produce a
+     * response-ready DOCX.
      */
     public function builder(): DocumentBuilder
     {
-        return DocumentBuilder::new();
+        return DocumentBuilder::new()->pageSetup($this->pageSetup());
     }
 
     /**
